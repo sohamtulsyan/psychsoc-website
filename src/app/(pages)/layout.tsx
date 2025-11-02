@@ -1,0 +1,44 @@
+"use client";
+import GradualBlur from "@/components/GradualBlur";
+import { NavBar } from "@/components/ui/tubelight-navbar";
+import { HomeIcon, BrainCircuit } from "lucide-react";
+
+export default function PagesLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <section className="relative h-full w-full">
+      <NavBar
+        items={[
+          { name: "Home", url: "/", icon: HomeIcon },
+          {name: "About", url: "/about", icon: HomeIcon },
+          {name: "Newsletter", url: "/newsletter", icon: HomeIcon },
+          {name: "Review", url: "/review", icon: HomeIcon },
+          { name: "Podcast", url: "/podcast", icon: HomeIcon },
+          { name: "Synapse", url: "/synapse", icon: BrainCircuit },
+        ]}
+      />
+      {/* Scrolling container */}
+      <main className="h-full w-full overflow-y-auto z-50">
+        {children}
+        {/* Spacer to prevent blur from hiding content */}
+        <div style={{ height: "6rem" }} />
+      </main>
+
+      {/* Blur overlay positioned at bottom */}
+      <GradualBlur
+        target="parent"
+        position="bottom"
+        height="6rem"
+        strength={2}
+        divCount={5}
+        curve="bezier"
+        exponential={true}
+        opacity={1}
+        className="z-0"
+      />
+    </section>
+  );
+}
