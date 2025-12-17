@@ -61,27 +61,30 @@ export default function About() {
     <div className="min-h-screen py-24">
       <div className="container mx-auto px-4 space-y-24">
         {/* Header */}
-        <section className="text-center space-y-6 max-w-3xl mx-auto">
-          <h1 className="font-century text-white text-5xl md:text-6xl font-bold">
+        <section className="text-center space-y-6 max-w-6xl mx-auto">
+          <h1 className="font-century text-primary text-5xl md:text-6xl font-bold">
             About Us
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            We are a diverse community united by our passion for understanding the human mind. 
-            Through research, discussion, and collaboration, we explore the depths of psychology and neuroscience.
+            The psychology society is one of the largest academic societies on campus, dedicated to fostering a deep understanding of psychological sciences. Representing a major discipline, the society engages students across all batches and fields through a variety of events, discussions, and initiatives that span from research and academic exploration to self-care and community building. With a focus on both academic and personal growth, the society serves as a vibrant hub for those interested in the intricacies of the mind, offering platforms for learning, collaboration, and innovation within the field of psychology.
           </p>
         </section>
 
         {/* Full Team Photo Placeholder */}
-        <section className="glass-card rounded-2xl overflow-hidden">
-          <div className="aspect-[21/9] bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-            <div className="text-center space-y-2">
-              <Users className="w-16 h-16 mx-auto text-muted-foreground" />
-              <p className="text-muted-foreground">Team Photo Coming Soon</p>
-            </div>
+        <section className="relative glass-card rounded-2xl overflow-hidden aspect-[21/9]">
+          <img
+            src="/team/Full Team.jpeg"
+            alt="Psychology Society Team"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+            <h2 className="font-century text-primary text-4xl md:text-6xl font-bold">
+              Our Team
+            </h2>
           </div>
         </section>
 
-        {/* Our Values */}
+        {/* Our Values
         <section className="space-y-12">
           <div className="text-center space-y-4">
             <h2 className="font-century text-4xl text-white font-bold">Our Values</h2>
@@ -107,7 +110,7 @@ export default function About() {
               );
             })}
           </div>
-        </section>
+        </section> */}
 
         {/* Team Members */}
         <section className="space-y-12">
