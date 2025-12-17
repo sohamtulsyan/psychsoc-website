@@ -3,13 +3,12 @@
 import { useEffect, useState, lazy, Suspense } from 'react';
 import { AuroraText } from '@/components/ui/aurora-text';
 import { Calendar, Users, BookOpen, Sparkles } from 'lucide-react';
+import TiltedCard from '@/components/TiltedCard';
 import ColorBends from '@/components/ColorBends';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 
 // Lazy load heavy components
 import NeonLogo from '@/components/NeonLogo';
-
-// Lazy load heavy components
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,32 +22,28 @@ export default function Home() {
 
   const events = [
     {
-      title: 'Cognitive Neuroscience Workshop',
-      date: 'March 15, 2025',
-      description: 'Explore the neural mechanisms underlying human cognition with Dr. Sarah Chen.',
-      icon: BookOpen,
-      color: 'from-purple-500 to-pink-500',
+      title: 'Psych-Out',
+      date: 'Recent',
+      description: 'Our flagship event challenging your psychological mettle.',
+      image: '/Psych-Out.jpg',
     },
     {
-      title: 'Mental Health Symposium',
-      date: 'March 22, 2025',
-      description: 'Join us for a comprehensive discussion on contemporary mental health practices.',
-      icon: Users,
-      color: 'from-pink-500 to-purple-500',
+      title: 'The Heal Cycle',
+      date: 'Recent',
+      description: 'Breaking the stigma and discussing mental wellness.',
+      image: '/Heal Cycle.jpg',
     },
     {
-      title: 'Research Methodology Seminar',
-      date: 'March 29, 2025',
-      description: 'Learn cutting-edge research techniques in psychological studies.',
-      icon: Sparkles,
-      color: 'from-purple-400 to-pink-400',
+      title: 'Admissions 101',
+      date: 'Recent',
+      description: 'Guiding you through the psychology admission process.',
+      image: '/Admissions 101 .jpg',
     },
     {
-      title: 'Psychology Career Fair',
-      date: 'April 5, 2025',
-      description: 'Connect with leading organizations in clinical and research psychology.',
-      icon: Calendar,
-      color: 'from-pink-400 to-purple-400',
+      title: 'MindPeers',
+      date: 'Recent',
+      description: 'Collaborative event focusing on peer support systems.',
+      image: '/MindPeers.jpg',
     },
   ];
 
@@ -136,41 +131,48 @@ export default function Home() {
       <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="font-century-gothic text-white text-4xl md:text-5xl font-bold">Upcoming Events</h2>
+            <h2 className="font-century-gothic text-white text-4xl md:text-5xl font-bold">Recent Events</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Engage with cutting-edge research and connect with fellow psychology enthusiasts
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {events.map((event, index) => {
-              const Icon = event.icon;
-              return (
-                <div
-                  key={index}
-                  className={`glass-card glass-card-hover p-8 rounded-2xl space-y-4 ${index === 0 ? 'md:col-span-2' : ''
-                    }`}
-                  style={{
-                    animationDelay: `${index * 0.1}s`,
-                  }}
-                >
-                  <div className="flex items-start justify-between">
-                    <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${event.color} flex items-center justify-center`}>
-                      <Icon className="w-6 h-6 text-white" />
+          <div className="grid md:grid-cols-2 gap-8">
+            {events.map((event, index) => (
+              <div key={index} className="flex justify-center">
+                <TiltedCard
+                  imageSrc={event.image}
+                  altText={event.title}
+                  captionText={event.title}
+                  containerHeight="400px"
+                  containerWidth="100%"
+                  imageHeight="400px"
+                  imageWidth="100%"
+                  rotateAmplitude={12}
+                  scaleOnHover={1.05}
+                  showMobileWarning={false}
+                  showTooltip={false}
+                  displayOverlayContent={true}
+                  overlayContent={
+                    <div className="relative w-full h-full">
+                      {/* Black overlay at 40% opacity */}
+                      <div className="absolute inset-0 bg-black/40 rounded-[15px]" />
+
+                      {/* Diffused blur at bottom edge */}
+                      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent rounded-b-[15px] backdrop-blur-sm" />
+
+                      {/* Centered content */}
+                      <div className="absolute inset-0 flex flex-col items-center justify-center p-8 rounded-[15px]">
+                        <div className="space-y-3 text-center">
+                          <h3 className="font-century text-3xl text-white font-bold drop-shadow-lg">{event.title}</h3>
+                          <p className="text-white/95 text-base leading-relaxed max-w-md drop-shadow-md">{event.description}</p>
+                        </div>
+                      </div>
                     </div>
-                    <span className="text-sm text-white">{event.date}</span>
-                  </div>
-
-                  <h3 className="font-century text-2xl text-white font-semibold">{event.title}</h3>
-                  <p className="text-white leading-relaxed">{event.description}</p>
-
-                  <button className="text-primary hover:text-secondary transition-colors font-medium inline-flex items-center gap-2 group">
-                    Learn More
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </button>
-                </div>
-              );
-            })}
+                  }
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
