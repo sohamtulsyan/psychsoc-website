@@ -70,12 +70,7 @@ export default function Home() {
           />
         </div>
 
-        {/* NeonLogo - Fixed positioning at top right */}
-        <div className="absolute top-8 right-8 z-20 hidden lg:block">
-          <Suspense fallback={null}>
-            <NeonLogo />
-          </Suspense>
-        </div>
+
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -127,7 +122,12 @@ export default function Home() {
             </div>
 
             {/* Empty column for layout balance on large screens */}
-            <div className="hidden lg:block" />
+            {/* NeonLogo - Centered in right column */}
+            <div className="hidden lg:flex justify-center items-center">
+              <Suspense fallback={null}>
+                <NeonLogo />
+              </Suspense>
+            </div>
           </div>
         </div>
       </section>
