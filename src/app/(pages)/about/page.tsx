@@ -1,12 +1,7 @@
 import { Users, Heart, Lightbulb, Target } from 'lucide-react';
 
 export default function About() {
-  const teamMembers = [
-    {
-      name: 'Dr. Emily Thompson',
-      role: 'Faculty Advisor',
-      description: 'Specializing in cognitive neuroscience and behavioral psychology.',
-    },
+  const coreLeadership = [
     {
       name: 'Michael Chen',
       role: 'President',
@@ -14,24 +9,71 @@ export default function About() {
     },
     {
       name: 'Sarah Williams',
-      role: 'Vice President',
-      description: 'Leading our outreach programs and community engagement initiatives.',
-    },
-    {
-      name: 'David Rodriguez',
-      role: 'Events Coordinator',
-      description: 'Organizing workshops, seminars, and networking opportunities.',
-    },
-    {
-      name: 'Lisa Park',
-      role: 'Newsletter Editor',
-      description: 'Curating monthly insights on psychology and neuroscience.',
+      role: 'President',
+      description: 'Leading our new strategic initiatives and cross-department collaboration.',
     },
     {
       name: 'James Anderson',
-      role: 'Research Lead',
-      description: 'Coordinating collaborative research projects and reviews.',
+      role: 'Vice President',
+      description: 'Overseeing internal operations and ensuring smooth execution of all club activities.',
     },
+    {
+      name: 'Emily Davis',
+      role: 'Vice President',
+      description: 'Managing external relations and building partnerships with other organizations.',
+    },
+  ];
+
+  const departments = [
+    {
+      name: 'Research',
+      description: 'Pushing the boundaries of psychological understanding through collaborative projects.',
+      members: [
+        {
+          name: 'Dr. Emily Thompson',
+          role: 'Faculty Advisor',
+          description: 'Specializing in cognitive neuroscience and behavioral psychology.',
+        },
+        {
+          name: 'David Rodriguez',
+          role: 'Research Lead',
+          description: 'Coordinating collaborative research projects and reviews.',
+        }
+      ]
+    },
+    {
+      name: 'Events',
+      description: 'Creating engaging experiences that bring the psychology community together.',
+      members: [
+        {
+          name: 'John Doe',
+          role: 'Events Head',
+          description: 'Organizing workshops, seminars, and networking opportunities.',
+        }
+      ]
+    },
+    {
+      name: 'Editorial',
+      description: 'Curating and sharing insights from the world of psychology.',
+      members: [
+        {
+          name: 'Lisa Park',
+          role: 'Editor-in-Chief',
+          description: 'Managing our monthly newsletter and blog publications.',
+        }
+      ]
+    },
+    {
+      name: 'Outreach',
+      description: 'Connecting our society with the broader community.',
+      members: [
+        {
+          name: 'Alex Johnson',
+          role: 'Community Manager',
+          description: 'Leading volunteer initiatives and social media engagement.',
+        }
+      ]
+    }
   ];
 
   const values = [
@@ -84,45 +126,17 @@ export default function About() {
           </div>
         </section>
 
-        {/* Our Values
+        {/* Core Leadership */}
         <section className="space-y-12">
           <div className="text-center space-y-4">
-            <h2 className="font-century text-4xl text-white font-bold">Our Values</h2>
+            <h2 className="font-century text-primary text-4xl font-bold">Core Leadership</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              The principles that guide our mission and community
+              Guiding the society towards its vision
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => {
-              const Icon = value.icon;
-              return (
-                <div
-                  key={index}
-                  className="glass-card glass-card-hover p-6 rounded-2xl space-y-4 text-center"
-                >
-                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="font-century text-xl font-semibold">{value.title}</h3>
-                  <p className="text-sm text-muted-foreground">{value.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </section> */}
-
-        {/* Team Members */}
-        <section className="space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="font-century text-white text-4xl font-bold">Meet the Team</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              The dedicated individuals bringing our vision to life
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {teamMembers.map((member, index) => (
+            {coreLeadership.map((member, index) => (
               <div
                 key={index}
                 className="glass-card glass-card-hover p-6 rounded-2xl space-y-4"
@@ -131,11 +145,54 @@ export default function About() {
                   <Users className="w-12 h-12 text-muted-foreground" />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="font-century text-xl font-semibold">{member.name}</h3>
-                  <p className="text-primary text-sm font-medium">{member.role}</p>
+                  <h3 className="font-century text-primary text-xl font-semibold">{member.name}</h3>
+                  <p className="text-white text-sm font-medium">{member.role}</p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {member.description}
                   </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Departments */}
+        <section className="space-y-16">
+          <div className="text-center space-y-4">
+            <h2 className="font-century text-primary text-4xl font-bold">Our Departments</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              The specialized teams driving our initiatives
+            </p>
+          </div>
+
+          <div className="space-y-20">
+            {departments.map((dept, deptIndex) => (
+              <div key={deptIndex} className="space-y-8">
+                <div className="space-y-4">
+                  <h3 className="font-century text-primary text-3xl font-bold">{dept.name}</h3>
+                  <p className="text-muted-foreground text-lg max-w-3xl">
+                    {dept.description}
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {dept.members.map((member, index) => (
+                    <div
+                      key={index}
+                      className="glass-card glass-card-hover p-6 rounded-2xl space-y-4"
+                    >
+                      <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex items-center justify-center">
+                        <Users className="w-12 h-12 text-muted-foreground" />
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="font-century text-primary text-xl font-semibold">{member.name}</h3>
+                        <p className="text-white text-sm font-medium">{member.role}</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {member.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
