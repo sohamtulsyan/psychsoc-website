@@ -7,7 +7,9 @@ import ColorBends from '@/components/ColorBends';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 
 // Lazy load heavy components
-const NeonLogo = lazy(() => import('@/components/NeonLogo'));
+import NeonLogo from '@/components/NeonLogo';
+
+// Lazy load heavy components
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -57,7 +59,7 @@ export default function Home() {
         <div className="absolute inset-0 from-background via-background/95 to-background z-0" />
 
         {/* Plasma Background - Lazy loaded */}
-        <div className="absolute inset-0 z-0" style={{ width: '100%', height: '100%' }}>
+        <div className="absolute inset-0 z-0" style={{ width: '100%', height: '100%', opacity: 0.5 }}>
           <ColorBends
             colors={[
               '#fface9ff'
@@ -103,7 +105,7 @@ export default function Home() {
                 </HoverBorderGradient>
               </div>
 
-              <div
+              {/* <div
                 className={`grid grid-cols-3 gap-6 pt-8 transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
               >
                 <div className="space-y-1">
@@ -118,15 +120,13 @@ export default function Home() {
                   <div className="font-century text-3xl font-bold text-white">12</div>
                   <div className="text-sm text-muted-foreground">Years</div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Empty column for layout balance on large screens */}
             {/* NeonLogo - Centered in right column */}
-            <div className="hidden lg:flex justify-center items-center">
-              <Suspense fallback={null}>
-                <NeonLogo />
-              </Suspense>
+            <div className="hidden lg:flex justify-center items-center translate-x-12 -translate-y-12">
+              <NeonLogo />
             </div>
           </div>
         </div>

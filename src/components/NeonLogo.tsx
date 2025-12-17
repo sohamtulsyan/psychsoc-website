@@ -9,8 +9,8 @@ export default function NeonLogo() {
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1080 1080"
-      width="300"
-      height="300"
+      width="400"
+      height="400"
       style={{ overflow: "visible" }}
       initial="hidden"
       animate="visible"
@@ -22,7 +22,7 @@ export default function NeonLogo() {
     >
       <motion.path
         d={path}
-        stroke="#fbc0c4"
+        stroke="#f2a6d3ff"
         strokeWidth="2"
         fill="none"
         variants={{
@@ -36,14 +36,14 @@ export default function NeonLogo() {
             pathOffset: 0,
             opacity: 1,
             transition: {
-              duration: 2,
+              duration: 3,
               ease: "easeInOut",
             },
           },
         }}
         style={{
           // Optimized filter: reduced to single drop-shadow
-          filter: "drop-shadow(0 0 15px #fbc0c4)",
+          filter: "drop-shadow(0 0 15px #ff67b6ff)",
           willChange: "opacity, stroke-dashoffset",
         }}
       />
