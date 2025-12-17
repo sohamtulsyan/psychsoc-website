@@ -3,63 +3,127 @@ import { Users, Heart, Lightbulb, Target } from 'lucide-react';
 export default function About() {
   const coreLeadership = [
     {
-      name: 'Michael Chen',
-      role: 'President',
-      description: 'Fourth-year student passionate about clinical psychology research.',
+      name: 'Parvi Takkar',
+      role: 'Co-President',
+      description: 'Leading the society with vision and dedication.',
     },
     {
-      name: 'Sarah Williams',
-      role: 'President',
-      description: 'Leading our new strategic initiatives and cross-department collaboration.',
+      name: 'Mannat Bahl',
+      role: 'Co-President',
+      description: 'Fostering growth and innovation within the community.',
     },
     {
-      name: 'James Anderson',
-      role: 'Vice President',
-      description: 'Overseeing internal operations and ensuring smooth execution of all club activities.',
+      name: 'Vritti Kohli',
+      role: 'Co-Vice President',
+      description: 'Supporting the presidential team and overseeing operations.',
     },
     {
-      name: 'Emily Davis',
-      role: 'Vice President',
-      description: 'Managing external relations and building partnerships with other organizations.',
+      name: 'Cheryl Joshi',
+      role: 'Co-Vice President',
+      description: 'Ensuring seamless execution of society initiatives.',
     },
   ];
 
   const departments = [
     {
-      name: 'Research',
-      description: 'Pushing the boundaries of psychological understanding through collaborative projects.',
-      members: [
-        {
-          name: 'Dr. Emily Thompson',
-          role: 'Faculty Advisor',
-          description: 'Specializing in cognitive neuroscience and behavioral psychology.',
-        },
-        {
-          name: 'David Rodriguez',
-          role: 'Research Lead',
-          description: 'Coordinating collaborative research projects and reviews.',
-        }
-      ]
-    },
-    {
       name: 'Events',
       description: 'Creating engaging experiences that bring the psychology community together.',
       members: [
         {
-          name: 'John Doe',
+          name: 'Raima Nanda',
           role: 'Events Head',
-          description: 'Organizing workshops, seminars, and networking opportunities.',
+          description: 'Orchestrating memorable events and gatherings.',
+        },
+        {
+          name: 'Ojasvi Agarwal',
+          role: 'Events Head',
+          description: 'Coordinating logistics and event execution.',
         }
       ]
     },
     {
-      name: 'Editorial',
+      name: 'Social Media & Marketing',
+      description: 'Showcasing our society\'s impact and engaging with our digital community.',
+      members: [
+        {
+          name: 'Mihir Eshan',
+          role: 'Social Media & Marketing Head',
+          description: 'Driving our digital presence and engagement strategies.',
+        },
+        {
+          name: 'Priyanka Aggarwal',
+          role: 'Social Media & Marketing Head',
+          description: 'Crafting compelling content and visual storytelling.',
+        }
+      ]
+    },
+    {
+      name: 'Helpdesk',
+      description: 'Providing support and guidance to students and members.',
+      members: [
+        {
+          name: 'Navvya Rahate',
+          role: 'Helpdesk Head',
+          description: 'Assisting specialized inquiries and member support.',
+        }
+      ]
+    },
+    {
+      name: 'Review',
+      description: 'Ensuring quality and consistency across all our initiatives.',
+      members: [
+        {
+          name: 'Srishti Upendra',
+          role: 'Review Head',
+          description: 'Overseeing the quality and standards of society output.',
+        }
+      ]
+    },
+    {
+      name: 'Research',
+      description: 'Pushing the boundaries of psychological understanding through collaborative projects.',
+      members: [
+        {
+          name: 'Madhunisha Majumder',
+          role: 'Research Head',
+          description: 'Leading academic inquiries and research projects.',
+        },
+        {
+          name: 'Advay Awasthy',
+          role: 'Research Head',
+          description: 'Facilitating collaborative studies and analysis.',
+        }
+      ]
+    },
+    {
+      name: 'Newsletter',
       description: 'Curating and sharing insights from the world of psychology.',
       members: [
         {
-          name: 'Lisa Park',
-          role: 'Editor-in-Chief',
-          description: 'Managing our monthly newsletter and blog publications.',
+          name: 'Myrah Sahni',
+          role: 'Newsletter Head',
+          description: 'Curating insightful content for our readers.',
+        },
+        {
+          name: 'Ananya Dubey',
+          role: 'Newsletter Head',
+          description: 'Managing publication and editorial standards.',
+        }
+      ]
+    },
+    {
+      name: 'Finance',
+      description: 'Managing resource allocation to ensure sustainable operations.',
+      members: [
+        {
+          name: 'Shreya Singhal',
+          role: 'Finance Head',
+          description: 'Managing society funds and budget allocation.',
+        },
+        {
+          name: 'Shaurya Taneja',
+          role: 'Finance Head',
+          description: 'Overseeing financial planning and sponsorship.',
         }
       ]
     },
@@ -68,9 +132,14 @@ export default function About() {
       description: 'Connecting our society with the broader community.',
       members: [
         {
-          name: 'Alex Johnson',
-          role: 'Community Manager',
-          description: 'Leading volunteer initiatives and social media engagement.',
+          name: 'Sanah Arora',
+          role: 'Outreach Head',
+          description: 'Building bridges with external partners and community.',
+        },
+        {
+          name: 'Manavi Jain',
+          role: 'Outreach Head',
+          description: 'Fostering relationships and community engagement.',
         }
       ]
     }
