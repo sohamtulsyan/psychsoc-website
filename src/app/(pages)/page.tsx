@@ -3,10 +3,10 @@
 import { useEffect, useState, lazy, Suspense } from 'react';
 import { AuroraText } from '@/components/ui/aurora-text';
 import { Calendar, Users, BookOpen, Sparkles } from 'lucide-react';
+import ColorBends from '@/components/ColorBends';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 
 // Lazy load heavy components
-const Plasma = lazy(() => import('@/components/Plasma'));
 const NeonLogo = lazy(() => import('@/components/NeonLogo'));
 
 export default function Home() {
@@ -55,17 +55,19 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 from-background via-background/95 to-background z-0" />
-        
+
         {/* Plasma Background - Lazy loaded */}
         <div className="absolute inset-0 z-0" style={{ width: '100%', height: '100%' }}>
-            <Plasma 
-              color="#c44f97"
-              speed={0.4}
-              direction="forward"
-              scale={3}
-              opacity={0.4}
-              mouseInteractive={false}
-            />
+          <ColorBends
+            colors={[
+              '#fface9ff'
+            ]}
+            frequency={1.6}
+            scale={1.7}
+            speed={0.3}
+            rotation={140}
+            autoRotate={-4}
+          />
         </div>
 
         {/* NeonLogo - Fixed positioning at top right */}
@@ -86,8 +88,8 @@ export default function Home() {
                   Join our vibrant community of thinkers, researchers, and enthusiasts as we delve into the fascinating world of psychology and neuroscience.
                 </p>
               </div>
-              
-              <div 
+
+              <div
                 className={`flex flex-wrap gap-4 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
               >
                 <HoverBorderGradient
@@ -106,7 +108,7 @@ export default function Home() {
                 </HoverBorderGradient>
               </div>
 
-              <div 
+              <div
                 className={`grid grid-cols-3 gap-6 pt-8 transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
               >
                 <div className="space-y-1">
@@ -146,9 +148,8 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className={`glass-card glass-card-hover p-8 rounded-2xl space-y-4 ${
-                    index === 0 ? 'md:col-span-2' : ''
-                  }`}
+                  className={`glass-card glass-card-hover p-8 rounded-2xl space-y-4 ${index === 0 ? 'md:col-span-2' : ''
+                    }`}
                   style={{
                     animationDelay: `${index * 0.1}s`,
                   }}
@@ -159,7 +160,7 @@ export default function Home() {
                     </div>
                     <span className="text-sm text-white">{event.date}</span>
                   </div>
-                  
+
                   <h3 className="font-century text-2xl text-white font-semibold">{event.title}</h3>
                   <p className="text-white leading-relaxed">{event.description}</p>
 
