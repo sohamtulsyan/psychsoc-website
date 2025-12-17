@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState, lazy, Suspense } from 'react';
+import { useEffect, useState } from 'react';
 import { AuroraText } from '@/components/ui/aurora-text';
-import { Calendar, Users, BookOpen, Sparkles } from 'lucide-react';
 import TiltedCard from '@/components/TiltedCard';
 import ColorBends from '@/components/ColorBends';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
@@ -156,7 +155,7 @@ export default function Home() {
                   overlayContent={
                     <div className="relative w-full h-full">
                       {/* Black overlay at 40% opacity */}
-                      <div className="absolute inset-0 bg-black/40 rounded-[15px]" />
+                      <div className="absolute inset-0 bg-black/50 rounded-[15px]" />
 
                       {/* Diffused blur at bottom edge - smooth fade */}
                       <div className="absolute bottom-0 left-0 right-0 h-48 rounded-b-[15px]"
@@ -172,7 +171,7 @@ export default function Home() {
                       {/* Centered content */}
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-8 rounded-[15px]">
                         <div className="space-y-3 text-center">
-                          <h3 className="font-century text-3xl text-white font-bold drop-shadow-lg">{event.title}</h3>
+                          <h3 className="font-century text-3xl text-primary font-bold drop-shadow-lg">{event.title}</h3>
                           <p className="text-white/95 text-base leading-relaxed max-w-md drop-shadow-md">{event.description}</p>
                         </div>
                       </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { LucideIcon } from "lucide-react"
@@ -21,13 +21,13 @@ export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
 
   return (
-<div
-  className={cn(
-    "fixed z-50 left-1/2 -translate-x-1/2 mb-6 sm:pt-6",
-    "bottom-10 sm:top-0 sm:bottom-auto",
-    className,
-  )}
->
+    <div
+      className={cn(
+        "fixed z-50 left-1/2 -translate-x-1/2 mb-6 sm:pt-6",
+        "bottom-10 sm:top-0 sm:bottom-auto",
+        className,
+      )}
+    >
       <div className="flex items-center gap-2 bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl py-1.5 px-2 rounded-full shadow-2xl shadow-[#fbc0c4]/20">
         {items.map((item) => {
           const Icon = item.icon
