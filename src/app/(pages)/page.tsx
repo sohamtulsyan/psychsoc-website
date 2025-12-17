@@ -158,8 +158,16 @@ export default function Home() {
                       {/* Black overlay at 40% opacity */}
                       <div className="absolute inset-0 bg-black/40 rounded-[15px]" />
 
-                      {/* Diffused blur at bottom edge */}
-                      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent rounded-b-[15px] backdrop-blur-sm" />
+                      {/* Diffused blur at bottom edge - smooth fade */}
+                      <div className="absolute bottom-0 left-0 right-0 h-48 rounded-b-[15px]"
+                        style={{
+                          background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.1) 60%, transparent 100%)',
+                          backdropFilter: 'blur(8px)',
+                          WebkitBackdropFilter: 'blur(8px)',
+                          maskImage: 'linear-gradient(to top, black 0%, black 20%, transparent 100%)',
+                          WebkitMaskImage: 'linear-gradient(to top, black 0%, black 20%, transparent 100%)'
+                        }}
+                      />
 
                       {/* Centered content */}
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-8 rounded-[15px]">
