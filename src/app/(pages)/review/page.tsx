@@ -1,5 +1,11 @@
+'use client';
+
 import { BookOpen, ExternalLink, Download } from 'lucide-react';
-import PDFViewer from '@/components/pdf-viewer';
+import dynamic from 'next/dynamic';
+
+const PDFViewer = dynamic(() => import('@/components/pdf-viewer'), {
+  ssr: false,
+});
 
 export default function Review() {
   const reviews = [

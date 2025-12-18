@@ -190,18 +190,18 @@ export default function PDFViewer({ src }: PDFViewerProps) {
                                 <Maximize2 className="h-5 w-5" />
                             </Button>
                         </DialogTrigger>
-                        <DialogContent className="max-w-[98vw] w-full h-[98vh] p-0 bg-background/95 backdrop-blur-3xl border-white/10 overflow-hidden flex flex-col sm:max-w-none rounded-2xl shadow-2xl [&>button]:text-white">
-                            <DialogHeader className="p-4 md:px-8 border-b border-white/5 shrink-0 flex flex-row items-center justify-between gap-6">
-                                <div className="hidden sm:block shrink-0">
-                                    <DialogTitle className="text-xl font-century text-primary">Fullscreen View</DialogTitle>
-                                    <DialogDescription className="text-[10px] text-muted-foreground uppercase tracking-widest mt-1">
+                        <DialogContent className="max-w-[98vw] w-full h-[98vh] p-0 bg-[#0a0a0a]/95 backdrop-blur-3xl border-white/10 overflow-hidden flex flex-col sm:max-w-none rounded-2xl shadow-2xl [&_button[data-slot=dialog-close]]:text-white [&_button[data-slot=dialog-close]]:opacity-100 [&_button[data-slot=dialog-close]]:z-50 [&_button[data-slot=dialog-close]]:bg-white/10 [&_button[data-slot=dialog-close]]:hover:bg-white/20">
+                            <div className="p-4 md:px-8 border-b border-white/5 shrink-0 flex items-center justify-between gap-6 bg-black/20">
+                                <div className="hidden md:block shrink-0">
+                                    <DialogTitle className="text-xl font-century text-primary font-bold">Fullscreen View</DialogTitle>
+                                    <DialogDescription className="text-[10px] text-muted-foreground uppercase tracking-widest mt-0.5">
                                         Reading Mode Active
                                     </DialogDescription>
                                 </div>
 
                                 {/* Fullscreen Navigation Bar */}
-                                <div className="flex items-center gap-4 bg-white/5 p-1.5 rounded-2xl border border-white/5">
-                                    <div className="flex items-center gap-1">
+                                <div className="flex items-center gap-2 sm:gap-4 bg-white/5 p-1 rounded-2xl border border-white/5 mx-auto md:mx-0">
+                                    <div className="flex items-center">
                                         <Button
                                             variant="ghost"
                                             size="icon"
@@ -222,19 +222,19 @@ export default function PDFViewer({ src }: PDFViewerProps) {
                                         </Button>
                                     </div>
 
-                                    <div className="flex items-center gap-2 px-2 border-x border-white/10">
+                                    <div className="flex items-center gap-2 px-3 border-x border-white/10">
                                         <form onSubmit={handlePageInputSubmit} className="flex items-center gap-2">
                                             <Input
                                                 type="text"
                                                 value={pageInput}
                                                 onChange={handlePageInputChange}
-                                                className="h-7 w-10 text-center bg-white/10 border-none text-xs font-bold p-0 focus-visible:ring-0 rounded-md text-primary"
+                                                className="h-7 w-12 text-center bg-white/10 border-none text-xs font-bold p-0 focus-visible:ring-0 rounded-md text-primary"
                                             />
-                                            <span className="text-[10px] text-muted-foreground font-bold uppercase">/ {numPages}</span>
+                                            <span className="text-[10px] text-muted-foreground font-bold uppercase whitespace-nowrap">/ {numPages}</span>
                                         </form>
                                     </div>
 
-                                    <div className="flex items-center gap-1">
+                                    <div className="flex items-center">
                                         <Button
                                             variant="ghost"
                                             size="icon"
@@ -257,30 +257,28 @@ export default function PDFViewer({ src }: PDFViewerProps) {
                                 </div>
 
                                 {/* Fullscreen Zoom Bar */}
-                                <div className="flex items-center gap-3 pr-8">
-                                    <div className="flex items-center gap-1">
-                                        <Button
-                                            variant="ghost"
-                                            size="icon"
-                                            onClick={zoomOut}
-                                            disabled={scale <= 0.5}
-                                            className="h-8 w-8 text-muted-foreground hover:text-white"
-                                        >
-                                            <ZoomOut className="h-4 w-4" />
-                                        </Button>
-                                        <span className="text-[10px] font-bold text-muted-foreground tabular-nums min-w-[35px] text-center">{Math.round(scale * 100)}%</span>
-                                        <Button
-                                            variant="ghost"
-                                            size="icon"
-                                            onClick={zoomIn}
-                                            disabled={scale >= 3.0}
-                                            className="h-8 w-8 text-muted-foreground hover:text-white"
-                                        >
-                                            <ZoomIn className="h-4 w-4" />
-                                        </Button>
-                                    </div>
+                                <div className="hidden sm:flex items-center gap-1 bg-white/5 p-1 rounded-2xl border border-white/5 pr-10">
+                                    <Button
+                                        variant="ghost"
+                                        size="icon"
+                                        onClick={zoomOut}
+                                        disabled={scale <= 0.5}
+                                        className="h-8 w-8 text-muted-foreground hover:text-white"
+                                    >
+                                        <ZoomOut className="h-4 w-4" />
+                                    </Button>
+                                    <span className="text-[10px] font-bold text-muted-foreground tabular-nums min-w-[35px] text-center">{Math.round(scale * 100)}%</span>
+                                    <Button
+                                        variant="ghost"
+                                        size="icon"
+                                        onClick={zoomIn}
+                                        disabled={scale >= 3.0}
+                                        className="h-8 w-8 text-muted-foreground hover:text-white"
+                                    >
+                                        <ZoomIn className="h-4 w-4" />
+                                    </Button>
                                 </div>
-                            </DialogHeader>
+                            </div>
                             <div className="flex-1 overflow-auto bg-black/60 flex justify-center p-4 md:p-12 custom-scrollbar scroll-smooth">
                                 <Document
                                     file={src}
