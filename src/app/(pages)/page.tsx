@@ -39,9 +39,9 @@ export default function Home() {
       image: '/Admissions 101 .jpg',
     },
     {
-      title: 'MindPeers',
+      title: 'Psy-Q',
       date: 'Recent',
-      description: 'Collaborative event focusing on peer support systems.',
+      description: 'Inter-University Quiz on Psychology, in collaboration with MindPeers',
       image: '/MindPeers.jpg',
     },
   ];
