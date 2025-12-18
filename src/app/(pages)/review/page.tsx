@@ -1,6 +1,6 @@
 'use client';
 
-import { BookOpen, ExternalLink, Download } from 'lucide-react';
+import { BookOpen, Download } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 const PDFViewer = dynamic(() => import('@/components/pdf-viewer'), {

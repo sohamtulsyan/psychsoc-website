@@ -31,7 +31,7 @@ export default function PodcastPage() {
             Psy-Kicks
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Welcome to our podcast, Psy-Kicks, where we bring the world of psychology right to your ears! Our mission is to make psychology accessible and engaging for everyone. Whether you're interested in understanding university-level psychological concepts, exploring cutting-edge research, or gaining insights from industry leaders, we've got it all covered. Through fun and informative conversations, we dive deep into the fascinating world of psychology, making complex topics relatable and exciting for listeners of all backgrounds.
+            Welcome to our podcast, Psy-Kicks, where we bring the world of psychology right to your ears! Our mission is to make psychology accessible and engaging for everyone. Whether you&apos;re interested in understanding university-level psychological concepts, exploring cutting-edge research, or gaining insights from industry leaders, we&apos;ve got it all covered. Through fun and informative conversations, we dive deep into the fascinating world of psychology, making complex topics relatable and exciting for listeners of all backgrounds.
           </p>
         </section>
 

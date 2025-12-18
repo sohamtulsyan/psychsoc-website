@@ -5,14 +5,12 @@ import type React from "react"
 import { useState, useCallback } from "react"
 import { Document, Page, pdfjs } from "react-pdf"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, ChevronsLeft, ChevronsRight, Maximize2 } from "lucide-react"
 import {
     Dialog,
     DialogContent,
     DialogTrigger,
-    DialogHeader,
     DialogTitle,
     DialogDescription,
 } from "@/components/ui/dialog"
