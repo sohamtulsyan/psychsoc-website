@@ -7,7 +7,15 @@ import { Document, Page, pdfjs } from "react-pdf"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, ChevronsLeft, ChevronsRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, ChevronsLeft, ChevronsRight, Maximize2 } from "lucide-react"
+import {
+    Dialog,
+    DialogContent,
+    DialogTrigger,
+    DialogHeader,
+    DialogTitle,
+    DialogDescription,
+} from "@/components/ui/dialog"
 import "react-pdf/dist/Page/AnnotationLayer.css"
 import "react-pdf/dist/Page/TextLayer.css"
 
@@ -168,6 +176,133 @@ export default function PDFViewer({ src }: PDFViewerProps) {
                             <ChevronsRight className="h-4 w-4" />
                         </Button>
                     </div>
+
+                    {/* Fullscreen Button */}
+                    <div className="hidden md:block w-8 h-[1px] bg-white/5" />
+
+                    <Dialog>
+                        <DialogTrigger asChild>
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-9 w-9 text-muted-foreground hover:text-primary transition-colors bg-white/5 hover:bg-white/10 rounded-xl"
+                            >
+                                <Maximize2 className="h-5 w-5" />
+                            </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-[98vw] w-full h-[98vh] p-0 bg-background/95 backdrop-blur-3xl border-white/10 overflow-hidden flex flex-col sm:max-w-none rounded-2xl shadow-2xl [&>button]:text-white">
+                            <DialogHeader className="p-4 md:px-8 border-b border-white/5 shrink-0 flex flex-row items-center justify-between gap-6">
+                                <div className="hidden sm:block shrink-0">
+                                    <DialogTitle className="text-xl font-century text-primary">Fullscreen View</DialogTitle>
+                                    <DialogDescription className="text-[10px] text-muted-foreground uppercase tracking-widest mt-1">
+                                        Reading Mode Active
+                                    </DialogDescription>
+                                </div>
+
+                                {/* Fullscreen Navigation Bar */}
+                                <div className="flex items-center gap-4 bg-white/5 p-1.5 rounded-2xl border border-white/5">
+                                    <div className="flex items-center gap-1">
+                                        <Button
+                                            variant="ghost"
+                                            size="icon"
+                                            onClick={goToFirstPage}
+                                            disabled={pageNumber <= 1}
+                                            className="h-8 w-8 text-muted-foreground hover:text-white"
+                                        >
+                                            <ChevronsLeft className="h-4 w-4" />
+                                        </Button>
+                                        <Button
+                                            variant="ghost"
+                                            size="icon"
+                                            onClick={goToPrevPage}
+                                            disabled={pageNumber <= 1}
+                                            className="h-8 w-8 text-white hover:bg-white/10 rounded-lg"
+                                        >
+                                            <ChevronLeft className="h-5 w-5" />
+                                        </Button>
+                                    </div>
+
+                                    <div className="flex items-center gap-2 px-2 border-x border-white/10">
+                                        <form onSubmit={handlePageInputSubmit} className="flex items-center gap-2">
+                                            <Input
+                                                type="text"
+                                                value={pageInput}
+                                                onChange={handlePageInputChange}
+                                                className="h-7 w-10 text-center bg-white/10 border-none text-xs font-bold p-0 focus-visible:ring-0 rounded-md text-primary"
+                                            />
+                                            <span className="text-[10px] text-muted-foreground font-bold uppercase">/ {numPages}</span>
+                                        </form>
+                                    </div>
+
+                                    <div className="flex items-center gap-1">
+                                        <Button
+                                            variant="ghost"
+                                            size="icon"
+                                            onClick={goToNextPage}
+                                            disabled={pageNumber >= numPages}
+                                            className="h-8 w-8 text-white hover:bg-white/10 rounded-lg"
+                                        >
+                                            <ChevronRight className="h-5 w-5" />
+                                        </Button>
+                                        <Button
+                                            variant="ghost"
+                                            size="icon"
+                                            onClick={goToLastPage}
+                                            disabled={pageNumber >= numPages}
+                                            className="h-8 w-8 text-muted-foreground hover:text-white"
+                                        >
+                                            <ChevronsRight className="h-4 w-4" />
+                                        </Button>
+                                    </div>
+                                </div>
+
+                                {/* Fullscreen Zoom Bar */}
+                                <div className="flex items-center gap-3 pr-8">
+                                    <div className="flex items-center gap-1">
+                                        <Button
+                                            variant="ghost"
+                                            size="icon"
+                                            onClick={zoomOut}
+                                            disabled={scale <= 0.5}
+                                            className="h-8 w-8 text-muted-foreground hover:text-white"
+                                        >
+                                            <ZoomOut className="h-4 w-4" />
+                                        </Button>
+                                        <span className="text-[10px] font-bold text-muted-foreground tabular-nums min-w-[35px] text-center">{Math.round(scale * 100)}%</span>
+                                        <Button
+                                            variant="ghost"
+                                            size="icon"
+                                            onClick={zoomIn}
+                                            disabled={scale >= 3.0}
+                                            className="h-8 w-8 text-muted-foreground hover:text-white"
+                                        >
+                                            <ZoomIn className="h-4 w-4" />
+                                        </Button>
+                                    </div>
+                                </div>
+                            </DialogHeader>
+                            <div className="flex-1 overflow-auto bg-black/60 flex justify-center p-4 md:p-12 custom-scrollbar scroll-smooth">
+                                <Document
+                                    file={src}
+                                    onLoadSuccess={onDocumentLoadSuccess}
+                                    loading={
+                                        <div className="flex flex-col items-center justify-center h-full gap-6">
+                                            <div className="h-16 w-16 animate-spin rounded-full border-2 border-primary/20 border-t-primary" />
+                                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-[0.3em] animate-pulse">Expanding View</p>
+                                        </div>
+                                    }
+                                >
+                                    <Page
+                                        pageNumber={pageNumber}
+                                        scale={Math.max(scale * 1.5, 1.3)}
+                                        renderTextLayer={false}
+                                        renderAnnotationLayer={false}
+                                        className="shadow-[0_0_100px_-20px_rgba(0,0,0,1)] transition-all duration-300"
+                                    />
+                                </Document>
+                            </div>
+                        </DialogContent>
+                    </Dialog>
                 </div>
             </div>
 
