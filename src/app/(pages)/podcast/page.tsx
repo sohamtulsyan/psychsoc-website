@@ -1,26 +1,54 @@
 "use client";
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
 
-const NotFound = () => {
-  const pathname = usePathname();
+import { GlareCard } from "@/components/ui/glare-card";
 
-  useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", pathname);
-  }, [pathname]);
+export default function PodcastPage() {
+  const episodes = [
+    {
+      title: "Episode 1",
+      // Placeholder link - Replace with actual Spotify episode links
+      src: "https://open.spotify.com/embed/episode/0L74XewCjcCTPVw8Sm41nV?utm_source=generator&theme=0",
+    },
+    {
+      title: "Episode 2",
+      src: "https://open.spotify.com/embed/track/6rqhFgbbKwnb9MLmUQDhG6?utm_source=generator",
+    },
+    {
+      title: "Episode 3",
+      src: "https://open.spotify.com/embed/track/6rqhFgbbKwnb9MLmUQDhG6?utm_source=generator",
+    },
+  ];
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-gray-600">Oops! Page not found</p>
-        <Link href="/" className="text-blue-500 underline hover:text-blue-700">
-          Return to Home
-        </Link>
+    <div className="min-h-screen py-24">
+      <div className="container mx-auto px-4 space-y-16">
+        <section className="text-center space-y-6 max-w-5xl mx-auto">
+          <h1 className="font-century text-primary text-5xl md:text-6xl font-bold">
+            Psy-Kicks
+          </h1>
+          <p className="text-xl text-muted-foreground leading-relaxed">
+            Welcome to our podcast, Psy-Kicks, where we bring the world of psychology right to your ears! Our mission is to make psychology accessible and engaging for everyone. Whether you're interested in understanding university-level psychological concepts, exploring cutting-edge research, or gaining insights from industry leaders, we've got it all covered. Through fun and informative conversations, we dive deep into the fascinating world of psychology, making complex topics relatable and exciting for listeners of all backgrounds.
+          </p>
+        </section>
+
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 justify-items-center max-w-7xl mx-auto">
+          {episodes.map((episode, index) => (
+            <GlareCard key={index} className="w-full max-w-[650px] h-[352px] overflow-hidden">
+              <iframe
+                style={{ borderRadius: "12px", border: 0 }}
+                src={episode.src}
+                width="100%"
+                height="352"
+                allowFullScreen
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                title={episode.title}
+                className="w-full h-full"
+              ></iframe>
+            </GlareCard>
+          ))}
+        </section>
       </div>
     </div>
   );
-};
-
-export default NotFound;
+}
