@@ -11,12 +11,16 @@ export default function PodcastPage() {
     },
     {
       title: "Episode 2",
-      src: "https://open.spotify.com/embed/track/6rqhFgbbKwnb9MLmUQDhG6?utm_source=generator",
+      src: "https://open.spotify.com/embed/episode/5kHeO4VZnSnA6KhOgde70u?utm_source=generator&theme=0",
     },
     {
       title: "Episode 3",
-      src: "https://open.spotify.com/embed/track/6rqhFgbbKwnb9MLmUQDhG6?utm_source=generator",
+      src: "https://open.spotify.com/embed/episode/5oDQDAJUrww8xrGJxmhRD3?utm_source=generator&theme=0",
     },
+    {
+      title: "Episode 4",
+      src: "https://open.spotify.com/embed/episode/5HkcuZaWfun0FnV1EDxcZe?utm_source=generator&theme=0",
+    }
   ];
 
   return (
@@ -31,14 +35,14 @@ export default function PodcastPage() {
           </p>
         </section>
 
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 justify-items-center max-w-7xl mx-auto">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full px-4 md:px-8">
           {episodes.map((episode, index) => (
-            <GlareCard key={index} className="w-full max-w-[650px] h-[352px] overflow-hidden">
+            <GlareCard key={index} className="w-full h-[352px] overflow-hidden">
               <iframe
                 style={{ borderRadius: "12px", border: 0 }}
                 src={episode.src}
                 width="100%"
-                height="352"
+                height="100%"
                 allowFullScreen
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
