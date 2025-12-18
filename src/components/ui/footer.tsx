@@ -12,7 +12,7 @@ export function Footer() {
             <div className="container mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-4 pointer-events-auto">
 
                 {/* Left: Branding */}
-                <h2 className="text-lg md:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">
+                <h2 className="text-md md:text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">
                     The Psychology Society, Ashoka University
                 </h2>
 
@@ -21,7 +21,7 @@ export function Footer() {
                     <div className="text-xs md:text-sm text-white/40 font-light flex items-center gap-1 bg-black/20 backdrop-blur-lg px-3 py-1 rounded-full border border-white/5 md:bg-transparent md:backdrop-blur-none md:border-none md:p-0">
                         Made by{" "}
                         <Link
-                            href="https://www.linkedin.com/in/soham-tulsyan"
+                            href="https://www.linkedin.com/in/soham-tulsyan-0902482a7/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="font-bold text-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[0_0_20px_rgba(var(--primary-rgb),0.5)] bg-clip-text"
@@ -34,14 +34,16 @@ export function Footer() {
                 {/* Right: Social Icons */}
                 <div className="flex items-center gap-4">
                     <Link
-                        href="mailto:topics.psychsoc@ashoka.edu.in"
+                        href="https://mail.google.com/mail/?view=cm&to=psychology.society@ashoka.edu.in"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 text-white/70 hover:text-white transition-all duration-300 border border-white/5 hover:bg-[#D44638] hover:border-[#D44638]"
                         aria-label="Email"
                     >
                         <MailIcon size={18} />
                     </Link>
                     <Link
-                        href="https://www.linkedin.com/company/ashoka-psychology-society/"
+                        href="https://www.linkedin.com/company/psychsoc-ashoka/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 text-white/70 hover:text-white transition-all duration-300 border border-white/5 hover:bg-[#0077b5] hover:border-[#0077b5]"
