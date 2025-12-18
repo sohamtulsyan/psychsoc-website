@@ -1,13 +1,26 @@
-import { BookOpen, ExternalLink } from 'lucide-react';
+import { BookOpen, ExternalLink, Download } from 'lucide-react';
+import PDFViewer from '@/components/pdf-viewer';
 
 export default function Review() {
   const reviews = [
     {
-      title: 'Neuroplasticity and Learning',
-      summary: 'A comprehensive review of recent studies on brain plasticity and its implications for education and rehabilitation. This review examines how the brain adapts to learning experiences across the lifespan.',
-      authors: 'Dr. Sarah Chen, Prof. Michael Wong',
-      date: 'February 2025',
+      title: "Special Edition",
+      date: 'Unknown',
+      summary: 'I do not know. Please give me a summary',
+      link: '/reviews/Special Edition.pdf'
     },
+    {
+      title: 'Edition 1, Volume 2',
+      summary: 'The second edition is a compilation of papers on music, K-pop, play behaviour, collective memory in LGBTQ+ identity formation, and the expression of identity through what we wear. These academic papers written by Ashokan students, and peer reviewed by our editors will prod you to think about topics you might not have encountered before! Alongside the academic papers, our team worked on a compilation of 5 lab reviews: looking at papers from CSBC, on Zebrafish, on Habituation Learning in C. Elegance and Gender and Identity Performance on Social Media.',
+      date: 'July 2025',
+      link: '/reviews/Edition 1, Volume 2.pdf'
+    },
+    {
+      title: 'Edition 1, Volume 1',
+      summary: 'We are excited to announce that the release of the Ashoka Psychology Review! It is a compilation of peer-reviewed papers from various disciplines within psychology. The first edition covers topics like Nudge Theory, Collective Trauma in survivors of the Bengal Partition, the allure of psychological horror, dating apps alongside questions rooted in neuroscience like early life trauma and how it affects the brain, role of pre-SMA in time perception and about PTSD and Hippocampus. We also have lab reviews, critically analyzing and interacting with the work of labs, inside and outside Ashoka.',
+      date: 'Unkown',
+      link: '/reviews/Edition 1, Volume 1.pdf'
+    }
   ];
 
   return (
@@ -36,8 +49,6 @@ export default function Review() {
                   <div className="space-y-2 flex-1">
                     <h2 className="font-century text-white text-2xl md:text-3xl font-bold">{review.title}</h2>
                     <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
-                      <span>{review.authors}</span>
-                      <span>•</span>
                       <span>{review.date}</span>
                     </div>
                   </div>
@@ -50,30 +61,23 @@ export default function Review() {
                 <p className="text-muted-foreground leading-relaxed">{review.summary}</p>
               </div>
 
-              {/* PDF Embed Placeholder */}
-              <div className="glass-card rounded-xl overflow-hidden">
-                <div className="aspect-[4/3] bg-gradient-to-br from-muted/50 to-muted/30 flex flex-col items-center justify-center gap-4">
-                  <BookOpen className="w-16 h-16 text-muted-foreground" />
-                  <p className="text-muted-foreground">PDF Preview</p>
-                  <button className="px-6 py-2 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium transition-all inline-flex items-center gap-2">
-                    View Full Review
-                    <ExternalLink className="w-4 h-4" />
-                  </button>
+              {/* PDF Viewer */}
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-semibold text-white text-lg">Read Publication</h3>
+                  <a
+                    href={review.link}
+                    download
+                    className="text-primary hover:text-secondary transition-colors inline-flex items-center gap-2 text-sm font-medium"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download PDF
+                  </a>
                 </div>
+                <PDFViewer src={review.link} />
               </div>
             </div>
           ))}
-        </section>
-
-        {/* Call to Action */}
-        <section className="glass-card glass-card-hover p-8 md:p-12 rounded-2xl max-w-2xl mx-auto text-center space-y-6">
-          <h2 className="font-century text-3xl text-white font-bold">Submit Your Review</h2>
-          <p className="text-muted-foreground">
-            Have research you would like to share? We welcome submissions from members for peer review and publication.
-          </p>
-          <button className="px-8 py-3 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium transition-all">
-            Submit Research
-          </button>
         </section>
       </div>
     </div>
