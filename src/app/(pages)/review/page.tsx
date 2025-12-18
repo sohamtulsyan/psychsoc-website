@@ -7,21 +7,6 @@ export default function Review() {
       summary: 'A comprehensive review of recent studies on brain plasticity and its implications for education and rehabilitation. This review examines how the brain adapts to learning experiences across the lifespan.',
       authors: 'Dr. Sarah Chen, Prof. Michael Wong',
       date: 'February 2025',
-      keywords: ['Neuroplasticity', 'Learning', 'Brain Development'],
-    },
-    {
-      title: 'The Impact of Social Media on Mental Health',
-      summary: 'An analysis of current research investigating the relationship between social media usage and psychological wellbeing in adolescents and young adults.',
-      authors: 'Dr. Emily Rodriguez, Dr. James Park',
-      date: 'January 2025',
-      keywords: ['Social Media', 'Mental Health', 'Adolescence'],
-    },
-    {
-      title: 'Cognitive Behavioral Therapy: Modern Approaches',
-      summary: 'Exploring contemporary CBT techniques and their effectiveness in treating anxiety and depression, including digital interventions.',
-      authors: 'Prof. Lisa Anderson, Dr. David Kim',
-      date: 'December 2024',
-      keywords: ['CBT', 'Therapy', 'Anxiety', 'Depression'],
     },
   ];
 
@@ -29,12 +14,12 @@ export default function Review() {
     <div className="min-h-screen py-24">
       <div className="container mx-auto px-4 space-y-16">
         {/* Header */}
-        <section className="text-center space-y-6 max-w-3xl mx-auto">
-          <h1 className="font-century text-white text-5xl md:text-6xl font-bold">
-            Research Reviews
+        <section className="text-center space-y-6 max-w-5xl mx-auto">
+          <h1 className="font-century text-primary text-5xl md:text-6xl font-bold">
+            Ashoka Psychology Review
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            In-depth analyses of cutting-edge psychological research, curated by our academic team and members.
+            Welcome to the Ashoka Psychology Review - a compilation of peer-reviewed papers from various disciplines within psychology.
           </p>
         </section>
 
@@ -63,18 +48,6 @@ export default function Review() {
               <div className="space-y-4">
                 <h3 className="font-semibold text-white text-lg">Summary</h3>
                 <p className="text-muted-foreground leading-relaxed">{review.summary}</p>
-              </div>
-
-              {/* Keywords */}
-              <div className="flex flex-wrap gap-2">
-                {review.keywords.map((keyword, keywordIndex) => (
-                  <span
-                    key={keywordIndex}
-                    className="px-3 py-1 text-sm rounded-full bg-primary/20 text-primary border border-primary/30"
-                  >
-                    {keyword}
-                  </span>
-                ))}
               </div>
 
               {/* PDF Embed Placeholder */}

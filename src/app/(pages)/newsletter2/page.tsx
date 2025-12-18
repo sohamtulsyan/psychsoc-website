@@ -1,5 +1,4 @@
-import { FileText, Download } from 'lucide-react';
-import Link from 'next/link';
+import { Download } from 'lucide-react';
 import Image from 'next/image';
 import { GlareCard } from "@/components/ui/glare-card";
 
