@@ -80,82 +80,120 @@ export default function PDFViewer({ src }: PDFViewerProps) {
     }, [])
 
     return (
-        <div className="flex flex-col gap-4 w-full">
-            {/* Controls */}
-            <div className="flex flex-wrap items-center justify-between gap-4 p-2 glass-card rounded-xl">
-                {/* Navigation Controls */}
-                <div className="flex items-center gap-1 md:gap-2">
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={goToFirstPage}
-                        disabled={pageNumber <= 1}
-                        className="h-8 w-8 text-muted-foreground hover:text-primary transition-colors"
-                    >
-                        <ChevronsLeft className="h-4 w-4" />
-                    </Button>
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={goToPrevPage}
-                        disabled={pageNumber <= 1}
-                        className="h-8 w-8 text-muted-foreground hover:text-primary transition-colors"
-                    >
-                        <ChevronLeft className="h-4 w-4" />
-                    </Button>
+        <div className="flex flex-col md:flex-row gap-6 w-full items-start">
+            {/* Sidebar Controls */}
+            <div className="w-full md:w-20 lg:w-24 shrink-0 md:sticky md:top-24 space-y-4">
+                <div className="glass-card p-3 rounded-2xl flex md:flex-col items-center justify-between md:justify-center gap-4 md:gap-6 border-white/5">
+                    {/* Navigation Section */}
+                    <div className="flex md:flex-col items-center gap-2">
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={goToPrevPage}
+                            disabled={pageNumber <= 1}
+                            className="h-9 w-9 text-muted-foreground hover:text-primary transition-colors bg-white/5 hover:bg-white/10 rounded-xl"
+                        >
+                            <ChevronLeft className="h-5 w-5" />
+                        </Button>
 
-                    <form onSubmit={handlePageInputSubmit} className="flex items-center gap-2">
-                        <Input
-                            type="text"
-                            value={pageInput}
-                            onChange={handlePageInputChange}
-                            className="h-8 w-12 text-center bg-background/50 border-white/10"
-                        />
-                        <span className="text-xs text-muted-foreground whitespace-nowrap">/ {numPages}</span>
-                    </form>
+                        <div className="flex flex-col items-center gap-1">
+                            <form onSubmit={handlePageInputSubmit} className="flex flex-col items-center">
+                                <Input
+                                    type="text"
+                                    value={pageInput}
+                                    onChange={handlePageInputChange}
+                                    className="h-8 w-10 text-center bg-transparent border-none text-sm text-primary font-bold p-0 focus-visible:ring-0 active:ring-0"
+                                />
+                                <div className="h-[1px] w-6 bg-white/10" />
+                                <span className="text-[10px] text-muted-foreground font-medium mt-1 uppercase tracking-tighter">{numPages}</span>
+                            </form>
+                        </div>
 
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={goToNextPage}
-                        disabled={pageNumber >= numPages}
-                        className="h-8 w-8 text-muted-foreground hover:text-primary transition-colors"
-                    >
-                        <ChevronRight className="h-4 w-4" />
-                    </Button>
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={goToLastPage}
-                        disabled={pageNumber >= numPages}
-                        className="h-8 w-8 text-muted-foreground hover:text-primary transition-colors"
-                    >
-                        <ChevronsRight className="h-4 w-4" />
-                    </Button>
-                </div>
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={goToNextPage}
+                            disabled={pageNumber >= numPages}
+                            className="h-9 w-9 text-muted-foreground hover:text-primary transition-colors bg-white/5 hover:bg-white/10 rounded-xl"
+                        >
+                            <ChevronRight className="h-5 w-5" />
+                        </Button>
+                    </div>
 
-                {/* Zoom Controls */}
-                <div className="flex items-center gap-1 md:gap-2">
-                    <Button variant="ghost" size="icon" onClick={zoomOut} disabled={scale <= 0.5} className="h-8 w-8 text-muted-foreground hover:text-primary transition-colors">
-                        <ZoomOut className="h-4 w-4" />
-                    </Button>
-                    <span className="min-w-[3rem] text-center text-xs text-muted-foreground">{Math.round(scale * 100)}%</span>
-                    <Button variant="ghost" size="icon" onClick={zoomIn} disabled={scale >= 3.0} className="h-8 w-8 text-muted-foreground hover:text-primary transition-colors">
-                        <ZoomIn className="h-4 w-4" />
-                    </Button>
+                    <div className="hidden md:block w-8 h-[1px] bg-white/5" />
+
+                    {/* Zoom Section */}
+                    <div className="flex md:flex-col items-center gap-2">
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={zoomIn}
+                            disabled={scale >= 3.0}
+                            className="h-9 w-9 text-muted-foreground hover:text-primary transition-colors bg-white/5 hover:bg-white/10 rounded-xl"
+                        >
+                            <ZoomIn className="h-5 w-5" />
+                        </Button>
+
+                        <span className="text-[10px] font-bold text-muted-foreground tabular-nums">{Math.round(scale * 100)}%</span>
+
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={zoomOut}
+                            disabled={scale <= 0.5}
+                            className="h-9 w-9 text-muted-foreground hover:text-primary transition-colors bg-white/5 hover:bg-white/10 rounded-xl"
+                        >
+                            <ZoomOut className="h-5 w-5" />
+                        </Button>
+                    </div>
+
+                    {/* Page Jump Shortcuts (Desktop only) */}
+                    <div className="hidden md:flex flex-col items-center gap-2 mt-2">
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={goToFirstPage}
+                            disabled={pageNumber <= 1}
+                            className="h-7 w-7 text-muted-foreground/50 hover:text-primary transition-colors"
+                        >
+                            <ChevronsLeft className="h-4 w-4" />
+                        </Button>
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={goToLastPage}
+                            disabled={pageNumber >= numPages}
+                            className="h-7 w-7 text-muted-foreground/50 hover:text-primary transition-colors"
+                        >
+                            <ChevronsRight className="h-4 w-4" />
+                        </Button>
+                    </div>
                 </div>
             </div>
 
-            {/* PDF Display */}
-            <div className="w-full glass-card rounded-xl overflow-hidden min-h-[400px] flex items-center justify-center bg-black/20">
-                <div className="flex justify-center w-full max-w-full overflow-auto p-4 custom-scrollbar">
+            {/* Main Content Area */}
+            <div className="flex-1 w-full glass-card rounded-2xl overflow-hidden min-h-[500px] flex items-start justify-center bg-black/40 border-white/5 shadow-2xl relative">
+                <div className="w-full overflow-auto custom-scrollbar flex justify-center p-4 md:p-8">
                     <Document
                         file={src}
                         onLoadSuccess={onDocumentLoadSuccess}
                         loading={
-                            <div className="flex flex-col items-center justify-center p-24 gap-4">
-                                <div className="h-10 w-10 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-                                <p className="text-sm text-muted-foreground animate-pulse">Loading Review...</p>
+                            <div className="flex flex-col items-center justify-center p-32 gap-6">
+                                <div className="relative">
+                                    <div className="h-12 w-12 animate-spin rounded-full border-2 border-primary/20 border-t-primary" />
+                                    <div className="absolute inset-x-0 top-full mt-4 flex justify-center">
+                                        <div className="h-1 w-24 bg-primary/10 rounded-full overflow-hidden">
+                                            <div className="h-full w-1/2 bg-primary animate-[translate_1.5s_infinite_ease-in-out]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <p className="text-xs font-bold text-muted-foreground/60 uppercase tracking-[0.2em]">Loading Publication</p>
+                            </div>
+                        }
+                        error={
+                            <div className="flex flex-col items-center justify-center p-24 text-center">
+                                <p className="text-destructive font-medium mb-2 text-sm">Failed to load publication</p>
+                                <Button variant="outline" size="sm" onClick={() => window.location.reload()} className="text-xs">Retry</Button>
                             </div>
                         }
                     >
@@ -163,13 +201,13 @@ export default function PDFViewer({ src }: PDFViewerProps) {
                             pageNumber={pageNumber}
                             scale={scale}
                             loading={
-                                <div className="flex items-center justify-center p-24">
-                                    <div className="h-10 w-10 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+                                <div className="flex items-center justify-center p-32">
+                                    <div className="h-12 w-12 animate-spin rounded-full border-2 border-primary/20 border-t-primary" />
                                 </div>
                             }
                             renderTextLayer={false}
                             renderAnnotationLayer={false}
-                            className="shadow-2xl max-w-full"
+                            className="max-w-full shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)]"
                         />
                     </Document>
                 </div>
