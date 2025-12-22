@@ -7,21 +7,25 @@ export default function About() {
       name: 'Parvi Takkar',
       role: 'Co-President',
       description: 'Leading the society with vision and dedication.',
+      image: '/team/placeholder.jpg', // Replace with actual photo path
     },
     {
       name: 'Mannat Bahl',
       role: 'Co-President',
       description: 'Fostering growth and innovation within the community.',
+      image: '/team/placeholder.jpg', // Replace with actual photo path
     },
     {
       name: 'Vritti Kohli',
       role: 'Co-Vice President',
       description: 'Supporting the presidential team and overseeing operations.',
+      image: '/team/placeholder.jpg', // Replace with actual photo path
     },
     {
       name: 'Cheryl Joshi',
       role: 'Co-Vice President',
       description: 'Ensuring seamless execution of society initiatives.',
+      image: '/team/placeholder.jpg', // Replace with actual photo path
     },
   ];
 
@@ -34,11 +38,13 @@ export default function About() {
           name: 'Raima Nanda',
           role: 'Events Head',
           description: 'Orchestrating memorable events and gatherings.',
+          image: '/team/placeholder.jpg', // Replace with actual photo path
         },
         {
           name: 'Ojasvi Agarwal',
           role: 'Events Head',
           description: 'Coordinating logistics and event execution.',
+          image: '/team/placeholder.jpg', // Replace with actual photo path
         }
       ]
     },
@@ -50,11 +56,13 @@ export default function About() {
           name: 'Mihir Eshan',
           role: 'Social Media & Marketing Head',
           description: 'Driving our digital presence and engagement strategies.',
+          image: '/team/placeholder.jpg', // Replace with actual photo path
         },
         {
           name: 'Priyanka Aggarwal',
           role: 'Social Media & Marketing Head',
           description: 'Crafting compelling content and visual storytelling.',
+          image: '/team/placeholder.jpg', // Replace with actual photo path
         }
       ]
     },
@@ -66,6 +74,7 @@ export default function About() {
           name: 'Navvya Rahate',
           role: 'Helpdesk Head',
           description: 'Assisting specialized inquiries and member support.',
+          image: '/team/placeholder.jpg', // Replace with actual photo path
         }
       ]
     },
@@ -77,6 +86,7 @@ export default function About() {
           name: 'Srishti Upendra',
           role: 'Review Head',
           description: 'Overseeing the quality and standards of society output.',
+          image: '/team/placeholder.jpg', // Replace with actual photo path
         }
       ]
     },
@@ -88,11 +98,13 @@ export default function About() {
           name: 'Madhunisha Majumder',
           role: 'Research Head',
           description: 'Leading academic inquiries and research projects.',
+          image: '/team/placeholder.jpg', // Replace with actual photo path
         },
         {
           name: 'Advay Awasthy',
           role: 'Research Head',
           description: 'Facilitating collaborative studies and analysis.',
+          image: '/team/placeholder.jpg', // Replace with actual photo path
         }
       ]
     },
@@ -104,11 +116,13 @@ export default function About() {
           name: 'Myrah Sahni',
           role: 'Newsletter Head',
           description: 'Curating insightful content for our readers.',
+          image: '/team/placeholder.jpg', // Replace with actual photo path
         },
         {
           name: 'Ananya Dubey',
           role: 'Newsletter Head',
           description: 'Managing publication and editorial standards.',
+          image: '/team/placeholder.jpg', // Replace with actual photo path
         }
       ]
     },
@@ -120,11 +134,13 @@ export default function About() {
           name: 'Shreya Singhal',
           role: 'Finance Head',
           description: 'Managing society funds and budget allocation.',
+          image: '/team/placeholder.jpg', // Replace with actual photo path
         },
         {
           name: 'Shaurya Taneja',
           role: 'Finance Head',
           description: 'Overseeing financial planning and sponsorship.',
+          image: '/team/placeholder.jpg', // Replace with actual photo path
         }
       ]
     },
@@ -136,11 +152,13 @@ export default function About() {
           name: 'Sanah Arora',
           role: 'Outreach Head',
           description: 'Building bridges with external partners and community.',
+          image: '/team/placeholder.jpg', // Replace with actual photo path
         },
         {
           name: 'Manavi Jain',
           role: 'Outreach Head',
           description: 'Fostering relationships and community engagement.',
+          image: '/team/placeholder.jpg', // Replace with actual photo path
         }
       ]
     }
@@ -191,8 +209,17 @@ export default function About() {
                 key={index}
                 className="glass-card glass-card-hover p-6 rounded-2xl space-y-4"
               >
-                <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex items-center justify-center">
-                  <Users className="w-12 h-12 text-muted-foreground" />
+                <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex items-center justify-center overflow-hidden relative">
+                  {member.image ? (
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <Users className="w-12 h-12 text-muted-foreground" />
+                  )}
                 </div>
                 <div className="space-y-2">
                   <h3 className="font-century text-primary text-xl font-semibold">{member.name}</h3>
@@ -231,8 +258,17 @@ export default function About() {
                       key={index}
                       className="glass-card glass-card-hover p-6 rounded-2xl space-y-4"
                     >
-                      <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex items-center justify-center">
-                        <Users className="w-12 h-12 text-muted-foreground" />
+                      <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex items-center justify-center overflow-hidden relative">
+                        {member.image ? (
+                          <Image
+                            src={member.image}
+                            alt={member.name}
+                            fill
+                            className="object-cover"
+                          />
+                        ) : (
+                          <Users className="w-12 h-12 text-muted-foreground" />
+                        )}
                       </div>
                       <div className="space-y-2">
                         <h3 className="font-century text-primary text-xl font-semibold">{member.name}</h3>

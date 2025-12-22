@@ -86,9 +86,9 @@ export default function Home() {
                 <HoverBorderGradient
                   containerClassName="rounded-full border-xl bg-transparent"
                   className="bg-transparent text-white flex items-center space-x-2"
-                  onClick={() => window.location.href = '#join'}
+                  onClick={() => window.location.href = '/about'}
                 >
-                  <span>Join Our Community</span>
+                  <span>Learn More</span>
                 </HoverBorderGradient>
                 <HoverBorderGradient
                   containerClassName="rounded-full"
@@ -127,7 +127,7 @@ export default function Home() {
       </section>
 
       {/* Events Bento Grid */}
-      <section className="py-24">
+      <section className="py-24" id='events'>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 space-y-4">
             <h2 className="font-century-gothic text-white text-4xl md:text-5xl font-bold">Recent Events</h2>
