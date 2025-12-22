@@ -1,8 +1,9 @@
 "use client"
 
-import React, { useState } from "react"
+import React from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -18,7 +19,7 @@ interface NavBarProps {
 }
 
 export function NavBar({ items, className }: NavBarProps) {
-  const [activeTab, setActiveTab] = useState(items[0].name)
+  const pathname = usePathname()
 
   return (
     <div
@@ -31,13 +32,12 @@ export function NavBar({ items, className }: NavBarProps) {
       <div className="flex items-center gap-2 bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl py-1.5 px-2 rounded-full shadow-2xl shadow-[#fbc0c4]/20">
         {items.map((item) => {
           const Icon = item.icon
-          const isActive = activeTab === item.name
+          const isActive = pathname === item.url
 
           return (
             <Link
               key={item.name}
               href={item.url}
-              onClick={() => setActiveTab(item.name)}
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-300",
                 "text-white/70 hover:text-white hover:bg-white/[0.05]",
