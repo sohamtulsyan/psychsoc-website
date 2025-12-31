@@ -3,55 +3,129 @@ import Image from 'next/image';
 import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
 
 export default function Newsletter() {
+  // const newsletters = [
+  //   {
+  //     title: 'PSYCH!',
+  //     edition: 'Issue 3',
+  //     date: 'September 2024',
+  //     cover: '/newsletters/Psych-3.png',
+  //     description: 'Exploring the intersection of AI and cognitive psychology, featuring insights on neural networks.',
+  //     topics: ['Artificial Intelligence', 'Cognitive Science', 'Neural Networks'],
+  //     link: 'https://drive.google.com/file/d/1D1XFyneyNQY3g1ZgrN2UA_CVZoM2chGE/view?usp=drive_link'
+  //   },
+  //   {
+  //     title: 'The Mind Matters',
+  //     edition: 'Volume 12, Issue 2',
+  //     date: 'February 2025',
+  //     cover: '/newsletters/Psych-2.png',
+  //     description: 'A deep dive into emotional regulation and its impact on mental health.',
+  //     topics: ['Emotional Intelligence', 'Mental Health', 'Therapy Techniques'],
+  //   },
+  //   {
+  //     title: 'The Mind Matters',
+  //     edition: 'Volume 12, Issue 1',
+  //     date: 'January 2025',
+  //     cover: '/newsletters/Psych-1.png',
+  //     description: 'New year special: Resolutions through a psychological lens and habit formation.',
+  //     topics: ['Behavioral Change', 'Habits', 'Goal Setting'],
+  //   },
+  //   {
+  //     title: 'The Mind Matters',
+  //     edition: 'Volume 11, Issue 12',
+  //     date: 'December 2024',
+  //     cover: '/newsletters/Psych-11.png',
+  //     description: 'Year in review: Major breakthroughs in neuroscience and psychology research.',
+  //     topics: ['Research Review', 'Neuroscience', 'Psychology'],
+  //   },
+  //   {
+  //     title: 'The Mind Matters',
+  //     edition: 'Volume 11, Issue 11',
+  //     date: 'November 2024',
+  //     cover: '/newsletters/Psych-11.png',
+  //     description: 'Understanding memory consolidation during sleep and its implications.',
+  //     topics: ['Sleep Science', 'Memory', 'Learning'],
+  //   },
+  //   {
+  //     title: 'The Mind Matters',
+  //     edition: 'Volume 11, Issue 10',
+  //     date: 'October 2024',
+  //     cover: '/newsletters/Psych-11.png',
+  //     description: 'The psychology of decision-making in uncertain environments.',
+  //     topics: ['Decision Science', 'Behavioral Economics', 'Risk'],
+  //   },
+  // ];
   const newsletters = [
+    {
+      title: 'Psychepedia',
+      edition: 'Issue 1',
+      date: 'February 2024',
+      cover: '/newsletters/Psychepedia-1.png',
+      description: '“Meet Our Writers”, Forensic Insights, Branches of Psychology, Psychology of Love Language and Fun Corner',
+      link: 'https://drive.google.com/file/d/1CPK24TeYC8teamQNk1ia5Gx912ruqWXq/view?usp=share_link'
+    },
+    {
+      title: 'Psychepedia',
+      edition: 'Issue 2',
+      date: 'April 2024',
+      cover: '/newsletters/Psychepedia-2.png',
+      description: 'From Fantasy to Reality, Digital Identity, Melodies & Minds, Fun Corner, and Movie Recommendations',
+      link: 'https://drive.google.com/file/d/1RgsuLMlUBkwWGmfDDHDL0M8khJ4rXjjg/view?usp=share_link'
+    },
     {
       title: 'PSYCH!',
       edition: 'Issue 3',
       date: 'September 2024',
       cover: '/newsletters/Psych-3.png',
-      description: 'Exploring the intersection of AI and cognitive psychology, featuring insights on neural networks.',
-      topics: ['Artificial Intelligence', 'Cognitive Science', 'Neural Networks'],
-      link: 'https://drive.google.com/file/d/1D1XFyneyNQY3g1ZgrN2UA_CVZoM2chGE/view?usp=drive_link'
+      description: 'Mind Matters: Exploring the Psyche',
+      link: 'https://drive.google.com/file/d/1D1XFyneyNQY3g1ZgrN2UA_CVZoM2chGE/view?usp=share_link'
     },
     {
-      title: 'The Mind Matters',
-      edition: 'Volume 12, Issue 2',
-      date: 'February 2025',
-      cover: '/newsletters/Psych-2.png',
-      description: 'A deep dive into emotional regulation and its impact on mental health.',
-      topics: ['Emotional Intelligence', 'Mental Health', 'Therapy Techniques'],
-    },
-    {
-      title: 'The Mind Matters',
-      edition: 'Volume 12, Issue 1',
-      date: 'January 2025',
-      cover: '/newsletters/Psych-1.png',
-      description: 'New year special: Resolutions through a psychological lens and habit formation.',
-      topics: ['Behavioral Change', 'Habits', 'Goal Setting'],
-    },
-    {
-      title: 'The Mind Matters',
-      edition: 'Volume 11, Issue 12',
-      date: 'December 2024',
-      cover: '/newsletters/Psych-11.png',
-      description: 'Year in review: Major breakthroughs in neuroscience and psychology research.',
-      topics: ['Research Review', 'Neuroscience', 'Psychology'],
-    },
-    {
-      title: 'The Mind Matters',
-      edition: 'Volume 11, Issue 11',
-      date: 'November 2024',
-      cover: '/newsletters/Psych-11.png',
-      description: 'Understanding memory consolidation during sleep and its implications.',
-      topics: ['Sleep Science', 'Memory', 'Learning'],
-    },
-    {
-      title: 'The Mind Matters',
-      edition: 'Volume 11, Issue 10',
+      title: 'PSYCH!',
+      edition: 'Issue 4',
       date: 'October 2024',
-      cover: '/newsletters/Psych-11.png',
-      description: 'The psychology of decision-making in uncertain environments.',
-      topics: ['Decision Science', 'Behavioral Economics', 'Risk'],
+      cover: '/newsletters/Psych-4.png',
+      description: 'Shades, Screens, and Breaking Schemas',
+      link: 'https://drive.google.com/file/d/1DZ3SahZAe1yoL899Z0oOi5V0-Jw51NJF/view?usp=share_link'
+    },
+    {
+      title: 'PSYCH!',
+      edition: 'Issue 5',
+      date: 'January 2025',
+      cover: '/newsletters/Psych-5.png',
+      description: 'Loafers, Thinkers, and Overthinkers: A Semester in Reflection',
+      link: 'https://drive.google.com/file/d/1l5vHVt0vdNj8VLFXtgEGd4NDoyebEAu0/view?usp=share_link'
+    },
+    {
+      title: 'PSYCH!',
+      edition: 'Issue 6',
+      date: 'March 2025',
+      cover: '/newsletters/Psych-6.png',
+      description: 'Synapse 2025',
+      link: 'https://drive.google.com/file/d/1OGMdQuNpwq_KCELzKCzpb6CcvxNKUQhS/view?usp=share_link'
+    },
+    {
+      title: 'PSYCH!',
+      edition: 'Issue 7',
+      date: 'August 2025',
+      cover: '/newsletters/Psych-7.png',
+      description: 'Your Intro to the Psychology Society',
+      link: 'https://drive.google.com/file/d/1kwCzTAmw0xOaBqAnW5x8Os6XFhFAFKPg/view?usp=share_link'
+    },
+    {
+      title: 'PSYCH!',
+      edition: 'Issue 8',
+      date: 'October 2025',
+      cover: '/newsletters/Psych-8.png',
+      description: 'The Social Mind Unpacked',
+      link: 'https://drive.google.com/file/d/1dWaLCXctvvMWVHEiiUNh8Uzlm8rGpIGR/view?usp=share_link'
+    },
+    {
+      title: 'PSYCH!',
+      edition: 'Issue 9',
+      date: 'November 2025',
+      cover: '/newsletters/Psych-9.png',
+      description: 'The Halloween Edition',
+      link: 'https://drive.google.com/file/d/1gaTDA_aexMxVomD_US82-8KCK4zbJN6A/view?usp=share_link'
     },
   ];
 

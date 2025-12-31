@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Home, ArrowLeft, Search } from 'lucide-react';
+import { Home, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function NotFound() {
@@ -30,7 +30,7 @@ export default function NotFound() {
                         Page Not Found
                     </h2>
                     <p className="text-muted-foreground text-lg leading-relaxed max-w-md mx-auto">
-                        Oops! The page you're looking for seems to have wandered off into the depths of the mind.
+                        Oops! The page you&apos;re looking for seems to have wandered off into the depths of the mind.
                     </p>
                 </div>
 
