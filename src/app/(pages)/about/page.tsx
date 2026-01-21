@@ -213,7 +213,7 @@ export default function About() {
         {
           name: 'Priyanka Aggarwal',
           role: 'Social Media & Marketing Head',
-          image: '/team/PriyankaAggarwal.jpg'
+          image: '/team/PriyankaAggarwal.jpeg'
         }
       ]
     },
@@ -243,7 +243,7 @@ export default function About() {
         {
           name: 'Madhunisha Majumder',
           role: 'Research Head',
-          image: '/team/MadhunishaMajumder.heic',
+          image: '/team/MadhunishaMajumder.png',
         },
         {
           name: 'Advay Awasthy',
@@ -258,13 +258,19 @@ export default function About() {
         {
           name: 'Myrah Sahni',
           role: 'Newsletter',
-          image: '/team/MyrahSahni.jpg',
+          image: '/team/MyrahSahni.jpeg',
         },
         {
           name: 'Ananya Dubey',
           role: 'Newsletter Head',
           description: 'Managing publication and editorial standards.',
-          image: '/team/AnanyaDubey.jpg',
+          image: '/team/AnanyaDubey.jpeg',
+        },
+        {
+          name: 'Sridhari Deorah',
+          role: 'Newsletter Head',
+          description: 'Managing publication and editorial standards.',
+          image: '/team/SridhariDeorah.jpeg',
         }
       ]
     },
