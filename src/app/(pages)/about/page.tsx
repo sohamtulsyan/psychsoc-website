@@ -263,13 +263,11 @@ export default function About() {
         {
           name: 'Ananya Dubey',
           role: 'Newsletter Head',
-          description: 'Managing publication and editorial standards.',
           image: '/team/AnanyaDubey.jpeg',
         },
         {
           name: 'Sridhari Deorah',
           role: 'Newsletter Head',
-          description: 'Managing publication and editorial standards.',
           image: '/team/SridhariDeorah.jpeg',
         }
       ]
@@ -414,9 +412,9 @@ export default function About() {
                       <div className="space-y-2">
                         <h3 className="font-century text-primary text-xl font-semibold">{member.name}</h3>
                         <p className="text-white text-sm font-medium">{member.role}</p>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        {/* <p className="text-sm text-muted-foreground leading-relaxed">
                           {member.description}
-                        </p>
+                        </p> */}
                       </div>
                     </div>
                   ))}
