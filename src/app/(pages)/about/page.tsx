@@ -2,168 +2,6 @@ import { Users } from 'lucide-react';
 import Image from 'next/image';
 
 export default function About() {
-  // const coreLeadership = [
-  //   {
-  //     name: 'Parvi Takkar',
-  //     role: 'Co-President',
-  //     description: 'Leading the society with vision and dedication.',
-  //     image: '/team/placeholder.jpg', // Replace with actual photo path
-  //   },
-  //   {
-  //     name: 'Mannat Bahl',
-  //     role: 'Co-President',
-  //     description: 'Fostering growth and innovation within the community.',
-  //     image: '/team/placeholder.jpg', // Replace with actual photo path
-  //   },
-  //   {
-  //     name: 'Vritti Kohli',
-  //     role: 'Co-Vice President',
-  //     description: 'Supporting the presidential team and overseeing operations.',
-  //     image: '/team/placeholder.jpg', // Replace with actual photo path
-  //   },
-  //   {
-  //     name: 'Cheryl Joshi',
-  //     role: 'Co-Vice President',
-  //     description: 'Ensuring seamless execution of society initiatives.',
-  //     image: '/team/placeholder.jpg', // Replace with actual photo path
-  //   },
-  // ];
-
-  // const departments = [
-  //   {
-  //     name: 'Events',
-  //     description: 'Creating engaging experiences that bring the psychology community together.',
-  //     members: [
-  //       {
-  //         name: 'Raima Nanda',
-  //         role: 'Events Head',
-  //         description: 'Orchestrating memorable events and gatherings.',
-  //         image: '/team/placeholder.jpg', // Replace with actual photo path
-  //       },
-  //       {
-  //         name: 'Ojasvi Agarwal',
-  //         role: 'Events Head',
-  //         description: 'Coordinating logistics and event execution.',
-  //         image: '/team/placeholder.jpg', // Replace with actual photo path
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     name: 'Social Media & Marketing',
-  //     description: 'Showcasing our society\'s impact and engaging with our digital community.',
-  //     members: [
-  //       {
-  //         name: 'Mihir Eshan',
-  //         role: 'Social Media & Marketing Head',
-  //         description: 'Driving our digital presence and engagement strategies.',
-  //         image: '/team/placeholder.jpg', // Replace with actual photo path
-  //       },
-  //       {
-  //         name: 'Priyanka Aggarwal',
-  //         role: 'Social Media & Marketing Head',
-  //         description: 'Crafting compelling content and visual storytelling.',
-  //         image: '/team/placeholder.jpg', // Replace with actual photo path
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     name: 'Helpdesk',
-  //     description: 'Providing support and guidance to students and members.',
-  //     members: [
-  //       {
-  //         name: 'Navvya Rahate',
-  //         role: 'Helpdesk Head',
-  //         description: 'Assisting specialized inquiries and member support.',
-  //         image: '/team/placeholder.jpg', // Replace with actual photo path
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     name: 'Review',
-  //     description: 'Ensuring quality and consistency across all our initiatives.',
-  //     members: [
-  //       {
-  //         name: 'Srishti Upendra',
-  //         role: 'Review Head',
-  //         description: 'Overseeing the quality and standards of society output.',
-  //         image: '/team/placeholder.jpg', // Replace with actual photo path
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     name: 'Research',
-  //     description: 'Pushing the boundaries of psychological understanding through collaborative projects.',
-  //     members: [
-  //       {
-  //         name: 'Madhunisha Majumder',
-  //         role: 'Research Head',
-  //         description: 'Leading academic inquiries and research projects.',
-  //         image: '/team/placeholder.jpg', // Replace with actual photo path
-  //       },
-  //       {
-  //         name: 'Advay Awasthy',
-  //         role: 'Research Head',
-  //         description: 'Facilitating collaborative studies and analysis.',
-  //         image: '/team/placeholder.jpg', // Replace with actual photo path
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     name: 'Newsletter',
-  //     description: 'Curating and sharing insights from the world of psychology.',
-  //     members: [
-  //       {
-  //         name: 'Myrah Sahni',
-  //         role: 'Newsletter Head',
-  //         description: 'Curating insightful content for our readers.',
-  //         image: '/team/placeholder.jpg', // Replace with actual photo path
-  //       },
-  //       {
-  //         name: 'Ananya Dubey',
-  //         role: 'Newsletter Head',
-  //         description: 'Managing publication and editorial standards.',
-  //         image: '/team/placeholder.jpg', // Replace with actual photo path
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     name: 'Finance',
-  //     description: 'Managing resource allocation to ensure sustainable operations.',
-  //     members: [
-  //       {
-  //         name: 'Shreya Singhal',
-  //         role: 'Finance Head',
-  //         description: 'Managing society funds and budget allocation.',
-  //         image: '/team/placeholder.jpg', // Replace with actual photo path
-  //       },
-  //       {
-  //         name: 'Shaurya Taneja',
-  //         role: 'Finance Head',
-  //         description: 'Overseeing financial planning and sponsorship.',
-  //         image: '/team/placeholder.jpg', // Replace with actual photo path
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     name: 'Outreach',
-  //     description: 'Connecting our society with the broader community.',
-  //     members: [
-  //       {
-  //         name: 'Sanah Arora',
-  //         role: 'Outreach Head',
-  //         description: 'Building bridges with external partners and community.',
-  //         image: '/team/placeholder.jpg', // Replace with actual photo path
-  //       },
-  //       {
-  //         name: 'Manavi Jain',
-  //         role: 'Outreach Head',
-  //         description: 'Fostering relationships and community engagement.',
-  //         image: '/team/placeholder.jpg', // Replace with actual photo path
-  //       }
-  //     ]
-  //   }
-  // ];
-
   const coreLeadership = [
     {
       name: 'Parvi Takkar',
@@ -189,6 +27,7 @@ export default function About() {
   const departments = [
     {
       name: 'Events',
+      description: 'The Events Department anchored the Society’s mission of making psychology accessible and engaging by curating activities that ranged from lighthearted pop-ups to the large-scale fest, Synapse.',
       members: [
         {
           name: 'Raima Nanda',
@@ -204,6 +43,7 @@ export default function About() {
     },
     {
       name: 'Social Media & Marketing',
+      description: 'If the Events team brought the ideas, the Media & Marketing crew made sure the whole campus (and beyond) knew about them. They were the creative engine behind our posters, reels, social media campaigns, and even merch.',
       members: [
         {
           name: 'Mihir Eshan',
@@ -219,6 +59,7 @@ export default function About() {
     },
     {
       name: 'Helpdesk',
+      description: 'The Helpdesk Department is a peer-driven initiative under the PSA that aims to support students through various academic and co-curricular decisions. It offers one-on-one guidance for course planning, trajectories, ISMs, research, internships, summer abroad, and more.',
       members: [
         {
           name: 'Navvya Rahate',
@@ -229,6 +70,7 @@ export default function About() {
     },
     {
       name: 'Review',
+      description: 'The Review department was started under the Psychology Society in the last academic year, 2024-2025, with the task of curating the Ashoka Psychology. Review, a semesterly academic publication showcasing commentaries, lab reviews, research articles and scholarly papers contributed by the university’s student body.',
       members: [
         {
           name: 'Srishti Upendra',
@@ -239,6 +81,7 @@ export default function About() {
     },
     {
       name: 'Research',
+      description: 'The Psychology Society Research Department was introduced in August 2024 with the aim of creating a peer-reviewed compilation of review papers, analytical essays, artwork, op-eds, original research, and other contributions.',
       members: [
         {
           name: 'Madhunisha Majumder',
@@ -254,6 +97,7 @@ export default function About() {
     },
     {
       name: 'Newsletter',
+      description: 'The Newsletter Department of the Psychology Society is all about making the subject more engaging, fun, and easy to dive into for anyone curious about why people act the way they do.',
       members: [
         {
           name: 'Myrah Sahni',
@@ -274,6 +118,7 @@ export default function About() {
     },
     {
       name: 'Finance',
+      description: 'The Finance Department’s work involves strategic budgeting, precise record-keeping, and fundraising to turn the society’s ideas into reality. They ensure the creation and review of the annual budget, coordinate fair fund allocation across departments.',
       members: [
         {
           name: 'Shreya Singhal',
@@ -289,6 +134,7 @@ export default function About() {
     },
     {
       name: 'Outreach',
+      description: 'The Outreach department was newly established this academic year, 2025-2026, to strengthen relationships within the university as well as externally. This department’s main goal is to build awareness and subsequently increase participation for Psych Society’s annual fest, Synapse.',
       members: [
         {
           name: 'Sanah Arora',
@@ -386,9 +232,9 @@ export default function About() {
               <div key={deptIndex} className="space-y-8">
                 <div className="space-y-4">
                   <h3 className="font-century text-primary text-3xl font-bold">{dept.name}</h3>
-                  {/* <p className="text-muted-foreground text-lg max-w-3xl">
+                  <p className="text-muted-foreground text-lg mx-auto">
                     {dept.description}
-                  </p> */}
+                  </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

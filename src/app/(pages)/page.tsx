@@ -27,7 +27,7 @@ export default function Home() {
       image: '/Psych-Out.jpg',
     },
     {
-      title: 'The Heal Cycle',
+      title: 'Session in collaboration with Heal Cycle',
       date: 'Recent',
       description: 'Breaking the stigma and discussing mental wellness.',
       image: '/Heal Cycle.jpg',

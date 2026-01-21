@@ -10,13 +10,19 @@ const PDFViewer = dynamic(() => import('@/components/pdf-viewer'), {
 export default function Review() {
   const reviews = [
     {
+      title: "Edition 1, Volume 2",
+      date: "December 2025",
+      summary: "The papers in this edition address a range of psychological questions, including neural network dysconnectivity in schizophrenia, multisensory regulation of behaviour, aesthetic judgment, cross-cultural workplace bullying, and the psychological and structural dimensions of human trafficking. It also features lab reviews that critically examine existing psychological research, including work on hyperscanning and interpersonal dynamics in mental health, recovery-focused therapy for older adults with bipolar disorder, prosodic features of speech in autism spectrum disorder, and adolescent mental health as a global research priority through the lens of the ATTUNE Project.",
+      link: "/reviews/Vol 2 Edition 1.pdf"
+    },
+    {
       title: "Special Edition",
-      date: 'Unknown',
-      summary: 'I do not know. Please give me a summary',
+      date: 'August 2025',
+      summary: 'This edition includes some of the most well-written papers from Professor Mary Arneaud’s Organisational Psychology and Cross-Cultural classes. This Special Edition, Volume 1 is a compilation of 5 papers alongside hosting an Interview Series which involves a series of 3 interviews with Masters and PhD students, on their research, and insights for those who want to step into the field!',
       link: '/reviews/Special Edition.pdf'
     },
     {
-      title: 'Edition 1, Volume 2',
+      title: 'Edition 2, Volume 1',
       summary: 'The second edition is a compilation of papers on music, K-pop, play behaviour, collective memory in LGBTQ+ identity formation, and the expression of identity through what we wear. These academic papers written by Ashokan students, and peer reviewed by our editors will prod you to think about topics you might not have encountered before! Alongside the academic papers, our team worked on a compilation of 5 lab reviews: looking at papers from CSBC, on Zebrafish, on Habituation Learning in C. Elegance and Gender and Identity Performance on Social Media.',
       date: 'July 2025',
       link: '/reviews/Edition 1, Volume 2.pdf'
@@ -24,7 +30,7 @@ export default function Review() {
     {
       title: 'Edition 1, Volume 1',
       summary: 'We are excited to announce that the release of the Ashoka Psychology Review! It is a compilation of peer-reviewed papers from various disciplines within psychology. The first edition covers topics like Nudge Theory, Collective Trauma in survivors of the Bengal Partition, the allure of psychological horror, dating apps alongside questions rooted in neuroscience like early life trauma and how it affects the brain, role of pre-SMA in time perception and about PTSD and Hippocampus. We also have lab reviews, critically analyzing and interacting with the work of labs, inside and outside Ashoka.',
-      date: 'Unkown',
+      date: 'March 2025',
       link: '/reviews/Edition 1, Volume 1.pdf'
     }
   ];
