@@ -29,7 +29,7 @@ export default function SynapseFest() {
 
             <div className="-mt-4 space-y-2">
               <p className="text-xl md:text-3xl text-primary font-medium tracking-wide uppercase font-century">
-                March 14-15, 2025
+                March 14-15, 2026
               </p>
 
               <p className="text-muted-foreground text-lg md:text-xl max-w-lg mx-auto leading-relaxed">
