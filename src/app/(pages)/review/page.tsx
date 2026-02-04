@@ -10,6 +10,12 @@ const PDFViewer = dynamic(() => import('@/components/pdf-viewer'), {
 export default function Review() {
   const reviews = [
     {
+      title: "Special Edition, Volume 2",
+      date: "February 2026",
+      summary: "This special edition of the Ashoka Psychology Review brings together four undergraduate papers from Cross-Cultural Psychology and Organizational Psychology that examine how culture shapes leadership, moral reasoning, and self-concept across national contexts. Through comparative analyses and applied psychological frameworks, the issue highlights the role of norms, power, and cultural structures in shaping individual and organizational life.",
+      link: "/reviews/Special Edition, Volume 2.pdf"
+    },
+    {
       title: "Edition 1, Volume 2",
       date: "December 2025",
       summary: "The papers in this edition address a range of psychological questions, including neural network dysconnectivity in schizophrenia, multisensory regulation of behaviour, aesthetic judgment, cross-cultural workplace bullying, and the psychological and structural dimensions of human trafficking. It also features lab reviews that critically examine existing psychological research, including work on hyperscanning and interpersonal dynamics in mental health, recovery-focused therapy for older adults with bipolar disorder, prosodic features of speech in autism spectrum disorder, and adolescent mental health as a global research priority through the lens of the ATTUNE Project.",
