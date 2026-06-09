@@ -10,6 +10,12 @@ const PDFViewer = dynamic(() => import('@/components/pdf-viewer'), {
 export default function Review() {
   const reviews = [
     {
+      title: "Edition 2, Volume 2",
+      summary: "Our Academic Papers section features work examining the neurobiology of love and mindfulness, violent video game exposure and aggression within an Indian undergraduate context, and the aesthetics of absence cognition through Shaiva non-dualism, Hindustani music, and Bharatanatyam. This edition also introduces a new section, Applied Inquiry and Intervention, featuring a pedagogical framework on communication beyond orality in inclusive classrooms comprising hearing and Deaf or hard-of-hearing children. Additionally, this edition includes three Lab Reviews exploring AI-delivered therapy for depression, psychostimulant discontinuation in ADHD treatment, and the role of sung speech in improving socio-communicative responsiveness in children with Autism Spectrum Disorders.",
+      date: "May 2026",
+      link: "/reviews/Vol 2 Edition 2.pdf"
+    },
+    {
       title: "Special Edition, Volume 2",
       date: "February 2026",
       summary: "This special edition of the Ashoka Psychology Review brings together four undergraduate papers from Cross-Cultural Psychology and Organizational Psychology that examine how culture shapes leadership, moral reasoning, and self-concept across national contexts. Through comparative analyses and applied psychological frameworks, the issue highlights the role of norms, power, and cultural structures in shaping individual and organizational life.",
